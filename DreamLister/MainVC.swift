@@ -23,9 +23,9 @@ class MainVC: UIViewController, UITableViewDelegate,UITableViewDataSource, NSFet
         tableView.delegate = self
         tableView.dataSource = self
         
+        generateTestData()
         attemptFetch()
         
-        generateTestData()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,12 +50,13 @@ class MainVC: UIViewController, UITableViewDelegate,UITableViewDataSource, NSFet
         cell.configureCell(item: item)
         
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         
-        return UITableViewCell()
+        return cell
     }
     //make the height fixed to 150
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -146,6 +147,8 @@ class MainVC: UIViewController, UITableViewDelegate,UITableViewDataSource, NSFet
         item5.title = "Alarm Clock"
         item5.price = 34
         item5.details = "This is a beautiful alarm clock"
+        
+        ad.saveContext()
     }
   
 }
