@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74DFB751E05E91A0097E424 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DFB741E05E91A0097E424 /* ItemDetailsVC.swift */; };
+		A74DFB771E05EFA40097E424 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74DFB761E05EFA40097E424 /* CustomTextField.swift */; };
 		A7A900E01E03B6D4002F8BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A900DF1E03B6D4002F8BB3 /* AppDelegate.swift */; };
 		A7A900E21E03B6D4002F8BB3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A900E11E03B6D4002F8BB3 /* MainVC.swift */; };
 		A7A900E51E03B6D4002F8BB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A900E31E03B6D4002F8BB3 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A74DFB741E05E91A0097E424 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		A74DFB761E05EFA40097E424 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = "../../../Documents/DreamLister Assets/CustomTextField.swift"; sourceTree = "<group>"; };
 		A7A900DC1E03B6D4002F8BB3 /* DreamLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A900DF1E03B6D4002F8BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A900E11E03B6D4002F8BB3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -78,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A74DFB731E05E8E80097E424 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7A900E11E03B6D4002F8BB3 /* MainVC.swift */,
+				A74DFB741E05E91A0097E424 /* ItemDetailsVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		A7A900D31E03B6D4002F8BB3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +116,7 @@
 				A7A901481E03BF1B002F8BB3 /* Generator */,
 				A7A901471E03BF15002F8BB3 /* Model */,
 				A7A900DF1E03B6D4002F8BB3 /* AppDelegate.swift */,
-				A7A900E11E03B6D4002F8BB3 /* MainVC.swift */,
+				A74DFB731E05E8E80097E424 /* Controllers */,
 				A7A900E31E03B6D4002F8BB3 /* Main.storyboard */,
 				A7A900E91E03B6D4002F8BB3 /* Assets.xcassets */,
 				A7A900EB1E03B6D4002F8BB3 /* LaunchScreen.storyboard */,
@@ -149,6 +162,7 @@
 			children = (
 				A7A9014A1E03D3AF002F8BB3 /* MaterialView.swift */,
 				A7A9014E1E03D6FB002F8BB3 /* ItemCell.swift */,
+				A74DFB761E05EFA40097E424 /* CustomTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -266,11 +280,13 @@
 				A7A9013F1E03BF0D002F8BB3 /* Store+CoreDataClass.swift in Sources */,
 				A7A900E01E03B6D4002F8BB3 /* AppDelegate.swift in Sources */,
 				A7A901421E03BF0D002F8BB3 /* ItemType+CoreDataProperties.swift in Sources */,
+				A74DFB751E05E91A0097E424 /* ItemDetailsVC.swift in Sources */,
 				A7A901441E03BF0D002F8BB3 /* Item+CoreDataProperties.swift in Sources */,
 				A7A901431E03BF0D002F8BB3 /* Item+CoreDataClass.swift in Sources */,
 				A7A900E81E03B6D4002F8BB3 /* DreamLister.xcdatamodeld in Sources */,
 				A7A901451E03BF0D002F8BB3 /* Image+CoreDataClass.swift in Sources */,
 				A7A901461E03BF0D002F8BB3 /* Image+CoreDataProperties.swift in Sources */,
+				A74DFB771E05EFA40097E424 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +494,7 @@
 				A7A900FE1E03B6D4002F8BB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7A900FF1E03B6D4002F8BB3 /* Build configuration list for PBXNativeTarget "DreamListerUITests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +503,7 @@
 				A7A901011E03B6D4002F8BB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
