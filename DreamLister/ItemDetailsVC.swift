@@ -16,10 +16,21 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var priceField: CustomTextField!
     @IBOutlet weak var detailsField: CustomTextField!
     @IBOutlet weak var selectStore: UILabel!
+    var stores = [Store]()
+
+    var itemToEdit: Item?
     
     @IBAction func saveButton(_ sender: UIButton) {
         
-        let item = Item(context: context)
+        
+        
+        var item: Item!
+        
+        if  itemToEdit == nil {
+            item = Item(context: context)
+        }else{
+            item = itemToEdit
+        }
         if let title = titleField.text {
             item.title = title
         }
@@ -39,8 +50,16 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         navigationController?.popViewController(animated: true)
         //dismiss(animated: true, completion: nil)
     }
-    var stores = [Store]()
     
+    @IBAction func deletePressed(_ sender: UIBarButtonItem) {
+        
+        if itemToEdit != nil {
+            context.delete(itemToEdit!)
+            ad.saveContext()
+        }
+        
+        _ = navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,6 +74,11 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         generateData()
         getStores()
+        
+        if itemToEdit != nil{
+            
+            loadItemData()
+        }
         
     }
 
@@ -119,6 +143,26 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     
-    
+    func loadItemData()
+    {
+        if let item = itemToEdit {
+            titleField.text = item.title
+            priceField.text = "\(item.price)"
+            detailsField.text = item.details
+            
+            
+            if let store = item.toStore{
+                var index = 0
+                repeat{
+                    let s = stores[index]
+                    if s.name == store.name{
+                        storePicker.selectedRow(inComponent: index)
+                        break
+                    }
+                    index += 1
+                }while(index < stores.count)
+            }
+        }
+    }
 
 }

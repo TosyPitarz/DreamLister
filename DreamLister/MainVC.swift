@@ -51,6 +51,28 @@ class MainVC: UIViewController, UITableViewDelegate,UITableViewDataSource, NSFet
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let object = controller.fetchedObjects, object.count > 0 {
+            let item = object[indexPath.row]
+            performSegue(withIdentifier: "itemDetailsVC", sender: item)
+            
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "itemDetailsVC"{
+            if let destination = segue.destination as? ItemDetailsVC{
+                if let item = sender as? Item{
+                    destination.itemToEdit = item
+                }
+            }
+        }
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell

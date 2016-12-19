@@ -38,7 +38,7 @@
                                 <rect key="frame" x="16" y="132" width="343" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="xpQ-Dm-wOG" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="xpQ-Dm-wOG" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xpQ-Dm-wOG" id="jyK-Tm-gzX">
@@ -132,14 +132,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HiE-hd-yqd">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="ADB-2q-nCL" kind="show" identifier="itemDetailsVCNew" id="Hcz-LN-a65"/>
+                                <segue destination="ADB-2q-nCL" kind="show" identifier="itemDetailsVC" id="Hcz-LN-a65"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segment" destination="oLW-fU-j6y" id="B5u-g8-ldz"/>
                         <outlet property="tableView" destination="id9-XI-HEg" id="GH2-Ex-PUb"/>
-                        <segue destination="ADB-2q-nCL" kind="show" identifier="itemDetailsVC" id="48P-eQ-TFp"/>
+                        <segue destination="ADB-2q-nCL" kind="show" identifier="itemDetailsVCNew" id="48P-eQ-TFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -258,6 +258,9 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="bp6-9U-bgL">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ukf-An-DIT">
                             <color key="tintColor" red="0.9333954632" green="0.30656087789999997" blue="0.26557094079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="ADB-2q-nCL" id="lDd-Rs-eNq"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
