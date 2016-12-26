@@ -121,7 +121,7 @@ class MainVC: UIViewController, UITableViewDelegate,UITableViewDataSource, NSFet
             }
             break
         case .delete:
-            if let indexPath = newIndexPath {
+            if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             break
