@@ -329,11 +329,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DreamLister/ItemDetailsVC.swift"
-            timestampString = "503884464.202394"
+            timestampString = "504628395.954088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "ItemDetailsVC"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DreamLister/ItemDetailsVC.swift"
+            timestampString = "504628395.954088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "deletePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -345,11 +361,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DreamLister/ItemDetailsVC.swift"
-            timestampString = "503884464.979941"
+            timestampString = "504628395.954088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "deletePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -361,27 +377,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DreamLister/ItemDetailsVC.swift"
-            timestampString = "503884897.672749"
+            timestampString = "504628395.954088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "deletePressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DreamLister/ItemDetailsVC.swift"
-            timestampString = "503884897.672749"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "deletePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>

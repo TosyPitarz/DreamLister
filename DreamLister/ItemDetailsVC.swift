@@ -9,16 +9,46 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     @IBOutlet weak var storePicker: UIPickerView!
     @IBOutlet weak var titleField: CustomTextField!
     @IBOutlet weak var priceField: CustomTextField!
     @IBOutlet weak var detailsField: CustomTextField!
     @IBOutlet weak var selectStore: UILabel!
+    @IBOutlet weak var thumbImg: UIImageView!
     var stores = [Store]()
 
     var itemToEdit: Item?
+    
+    var imagePicker: UIImagePickerController!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        if let topItem = self.navigationController?.navigationBar.topItem{
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+        
+        storePicker.delegate = self
+        storePicker.dataSource = self
+        
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
+        
+        generateData()
+        getStores()
+        
+        if itemToEdit != nil{
+            
+            loadItemData()
+        }
+        
+    }
+    
     
     @IBAction func saveButton(_ sender: UIButton) {
         
@@ -26,11 +56,17 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         var item: Item!
         
+        let picture = Image(context: context)
+        picture.image = thumbImg.image
+        
+        
         if  itemToEdit == nil {
             item = Item(context: context)
         }else{
             item = itemToEdit
         }
+        
+        item.toImage = picture
         if let title = titleField.text {
             item.title = title
         }
@@ -62,29 +98,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         _ = navigationController?.popViewController(animated: true)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        if let topItem = self.navigationController?.navigationBar.topItem{
-            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        }
-        
-        storePicker.delegate = self
-        storePicker.dataSource = self
-        
-        generateData()
-        getStores()
-        
-        if itemToEdit != nil{
-            
-            loadItemData()
-        }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -152,7 +166,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             priceField.text = "\(item.price)"
             detailsField.text = item.details
             
-            
+            thumbImg.image = item.toImage?.image as? UIImage
             if let store = item.toStore{
                 var index = 0
                 repeat{
@@ -165,6 +179,24 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 }while(index < stores.count)
             }
         }
+    }
+    
+    
+    @IBAction func addImage(_ sender: UIButton) {
+        
+        
+        present(imagePicker, animated:true, completion: nil)
+        
+    }
+   
+   
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            thumbImg.image = image
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 
 }
